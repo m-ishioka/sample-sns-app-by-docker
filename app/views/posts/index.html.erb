@@ -1,0 +1,18 @@
+
+
+<h1>タイムライン</h1>
+
+<div id="posts">
+  <% @posts.each do |post| %>
+    <article>
+      <%= render post %>
+        <%= link_to "ツイートを表示", post, class: 'button' %>
+    </article>
+  <% end %>
+</div>
+
+<div class="fix-spacer">
+</div>
+<div class="fix-bottom">
+  <%= link_to "新しくツイートする", new_post_path, class: 'button' %>
+</div>

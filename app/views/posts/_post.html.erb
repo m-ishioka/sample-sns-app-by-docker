@@ -1,0 +1,25 @@
+<div id="<%= dom_id post %>">
+  <section>
+    <p>
+      <strong>User:</strong>
+      <%= post.user_id %>
+    </p>
+
+    <p>
+      <strong>ツイート内容:</strong>
+      <%= post.content %>
+    </p>
+  <section>
+
+  <% if post.comments %>
+    <% post.comments.each do |comment| %>
+      <blockquote>
+        <strong>コメント:</strong>
+        <%= comment.content %>
+      </blockquote>
+      <% if @user.id == comment.user_id %>
+        <%= link_to "コメントを編集する", comment, class: 'button' %>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>

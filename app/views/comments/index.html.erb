@@ -1,0 +1,14 @@
+
+
+<h1>コメント</h1>
+
+<div id="comments">
+  <% @comments.each do |comment| %>
+    <%= render comment %>
+    <p>
+      <%= link_to "コメントを表示", comment %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "新しいコメント", new_comment_path %>

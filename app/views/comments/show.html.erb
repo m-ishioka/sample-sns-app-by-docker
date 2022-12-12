@@ -1,0 +1,12 @@
+
+
+<%= render @comment %>
+
+<div>
+  <%= link_to "タイムラインに戻る", posts_path %>
+  <% if @user.id == @comment.user_id %>
+  | <%= link_to "コメントを編集する", edit_comment_path(@comment, post_id: @comment.post_id) %>
+
+  <%= button_to "このコメントを削除する", @comment, method: :delete %>
+  <% end %>
+</div>

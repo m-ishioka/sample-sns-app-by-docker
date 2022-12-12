@@ -1,0 +1,13 @@
+
+
+<%= render @post %>
+
+<div>
+  <%= link_to "タイムラインに戻る", posts_path %>
+  | <%= link_to "ツイートにコメントする", new_comment_path(post_id: @post.id) %>
+  <% if @user.id == @post.user_id %>
+    | <%= link_to "ツイートを編集する", edit_post_path(@post) %>
+
+    <%= button_to "ツイートを削除する", @post, method: :delete %>
+  <% end %>
+</div>
